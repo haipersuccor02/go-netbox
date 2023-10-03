@@ -481,6 +481,12 @@ for prop, prop_spec in data["definitions"]["WritableVMInterface"]["properties"].
         prop_spec["x-omitempty"] = False
         logging.info(f"set x-omitempty = false on WritableVMInterface.{prop}")
 
+# Add omitempty = false for site latitude and longitude
+for prop, prop_spec in data["definitions"]["WritableSite"]["properties"].items():
+    if prop in ["latitude", "longitude"]:
+        prop_spec["x-omitempty"] = False
+        logging.info(f"set x-omitempty = false on WritableSite.{prop}")
+
 # Delete problematic maximums (might have to be replaced with a proper value)
 for definition, definition_spec in data["definitions"].items():
     for prop, prop_spec in definition_spec["properties"].items():
@@ -568,3 +574,4 @@ with open("swagger.processed.json", "w") as writefile:
 
 
 print("Swaggerfile preprocession complete")
+

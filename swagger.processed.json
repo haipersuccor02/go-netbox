@@ -80504,14 +80504,16 @@
           "description": "GPS coordinate (latitude)",
           "type": "number",
           "format": "decimal",
-          "x-nullable": true
+          "x-nullable": true,
+          "x-omitempty": false
         },
         "longitude": {
           "title": "Longitude",
           "description": "GPS coordinate (longitude)",
           "type": "number",
           "format": "decimal",
-          "x-nullable": true
+          "x-nullable": true,
+          "x-omitempty": false
         },
         "comments": {
           "title": "Comments",
